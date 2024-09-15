@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       userId: {
-        type: DataTypes.UUID, // Change to UUID to match the User model
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
           model: "Users",

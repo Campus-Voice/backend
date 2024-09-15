@@ -23,9 +23,9 @@ db.Party = require("./Party")(sequelize, Sequelize);
 db.PartyMember = require("./PartyMember")(sequelize, Sequelize);
 db.Post = require("./Post")(sequelize, Sequelize);
 db.Vote = require("./Vote")(sequelize, Sequelize);
-db.Comment = require("./Comment")(sequelize, Sequelize); 
-db.Chat = require("./Chat")(sequelize, Sequelize); 
-db.Message = require("./Message")(sequelize, Sequelize); 
+db.Comment = require("./Comment")(sequelize, Sequelize);
+db.Chat = require("./Chat")(sequelize, Sequelize);
+db.Message = require("./Message")(sequelize, Sequelize);
 
 // Import and set up associations
 require("./Associations")(db);

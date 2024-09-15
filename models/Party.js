@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       leaderId: {
-        type: DataTypes.UUID, // Change to UUID
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
-          model: "Users", // references User table
+          model: "Users",
           key: "id",
         },
       },

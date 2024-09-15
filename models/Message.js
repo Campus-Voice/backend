@@ -3,22 +3,20 @@ module.exports = (sequelize, DataTypes) => {
     "Message",
     {
       senderId: {
-        type: DataTypes.UUID, // Should match the UUID type used in User model
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
-          model: "Users", // This refers to the table name, not the imported model
+          model: "Users", // Correct reference
           key: "id",
         },
-        onDelete: "CASCADE",
       },
       receiverId: {
-        type: DataTypes.UUID, // Should match the UUID type used in User model
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
-          model: "Users", // This refers to the table name, not the imported model
+          model: "Users", // Correct reference
           key: "id",
         },
-        onDelete: "CASCADE",
       },
       content: {
         type: DataTypes.STRING,
@@ -28,6 +26,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      chatId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "chats",
+          key: "id",
+        },
+      },
     },
     {
       timestamps: true,
@@ -35,4 +40,4 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   return Message;
-}; 
+};

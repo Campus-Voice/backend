@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       userId: {
-        type: DataTypes.UUID, // Change to UUID
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
           model: "Users",
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       partyId: {
-        type: DataTypes.UUID, // Change to UUID for partyId as well
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
           model: "Parties",

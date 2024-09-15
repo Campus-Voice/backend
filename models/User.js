@@ -9,9 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: uuidv4,
         primaryKey: true,
       },
-      name: {
+      username: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       email: {
         type: DataTypes.STRING,
@@ -22,31 +23,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      role: {
-        type: DataTypes.ENUM("student", "party", "admin"),
-        allowNull: false,
-        defaultValue: "student",
-      },
-      status: {
+      isAdmin: {
         type: DataTypes.BOOLEAN,
-        defaultValue: true,
-      },
-      profilePic: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      otp: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      otpExpires: {
-        type: DataTypes.DATE,
-        allowNull: true,
+        defaultValue: false,
       },
     },
     {
       timestamps: true,
-      paranoid: true, // For soft deletion
+      paranoid: true,
+      tableName: "Users", // Ensure the table name is correct
     }
   );
   return User;
